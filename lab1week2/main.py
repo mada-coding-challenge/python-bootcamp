@@ -45,3 +45,12 @@ if index < 0 or index >= len(teacher_name):
     print("Invalid index. Please enter a valid index.")
 else:       
     print(teacher_name[index])
+
+#challenge 
+
+x = 1
+y = 0
+
+x , y = y , x
+
+print(x , y)
