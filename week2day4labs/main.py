@@ -95,3 +95,48 @@ elif not name.replace(" ", "").isalpha():
 else:
     print("Name is valid.")
 
+#lab 8
+age_text = input("Enter your age: ").strip();
+
+if age_text.isdigit():
+    age = int(age_text)
+    print(f"You will be {age + 5} years old in 5 years.")
+else:
+    print("Invalid age. Please enter a valid number.")
+
+# Lab 9
+
+score_text = input('Enter a number between 0 and 100: ')
+
+if score_text.isdigit():
+    score_x = int(score_text)
+    if 0 <= score_x and score_x <= 100:
+        print("Valid score.")
+    else:
+        print("Score must be between 0 and 100.")
+
+# lab 10
+
+membership = ["Admin", "Viewer", "Editor"]
+
+current_membership = input("Enter your membership").strip().lower()
+print(current_membership.title())
+if current_membership.title() in membership:
+    print("You are allowed to view the content.") 
+    print(current_membership.title())
+else:
+    print("Please contact the admin team.")
+
+#lab 11
+
+command = input("Please enter a command (start , stop , status): ").strip().lower()
+
+match command:
+    case "start":
+        print("System is starting...")
+    case "stop":
+        print("System is stopping...")
+    case "status":
+        print("System status: Running")
+    case _:
+        print("Please enter proper command")
