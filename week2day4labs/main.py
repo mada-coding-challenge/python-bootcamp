@@ -21,7 +21,12 @@ else:
     print("Score must be a number between 0 and 100.")  
 
 choice = input("Choose Your course (Python , Java, or C++): ").upper()
-if choice in ["PYTHON", "JAVA", "C++"]:
-    print("Course: ", choice)
-else:
-    print("Invalid course selection. Please choose Python, Java, or C++.")
+match choice:
+    case "PYTHON":
+        print("Course: ", choice)
+    case "JAVA":
+        print("Course: ", choice)
+    case "C++":
+        print("Course: ", choice)
+    case _:
+        print("Invalid course selection. Please choose Python, Java, or C++.")
