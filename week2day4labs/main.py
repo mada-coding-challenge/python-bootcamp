@@ -7,6 +7,7 @@ score = input("enter your score: ")
 if(score.isdigit() and 0 <= int(score) <= 100):
     print("Score: ", score)
     score=int(score)  # Convert score to integer for comparison
+    #Lab3
     if score >= 90:
        print("Grade: A")
     elif score >= 80:
@@ -30,3 +31,67 @@ match choice:
         print("Course: ", choice)
     case _:
         print("Invalid course selection. Please choose Python, Java, or C++.")
+
+# Lab1
+
+age = 20
+if 18 <= age <=50:
+    print("Age is between 18 and 50.")
+
+print("code completed")
+
+#Lab4
+
+is_active = True
+is_verified = True
+role="admin"
+is_blocked=False
+
+if is_active and is_verified:
+    print("account is ready to use")
+
+if role == "admin" or role == "moderator":
+    print("You can edit content.")
+
+if not is_blocked:
+    print("You can access the account.")
+
+else:
+    print("Account is blocked. Please contact support.")
+
+# Lab 5
+account_active = True
+has_permission = False
+
+if account_active:
+    if has_permission:
+        print("access granted")
+    else:
+        print("access denied")
+
+else:
+    print("account is inactive")
+
+# Lab 6
+name
+cart = []
+balance = 0
+
+if name:
+    print("name has a value")
+
+if not cart:
+    print("cart is empty")
+print(bool(balance))  # False, since balance is 0
+
+# lab 7
+
+name = input("Enter your name: ").strip()
+
+if not name:
+    print("Name is required.")
+elif not name.replace(" ", "").isalpha():
+    print("Name must contain only letters and spaces.")
+else:
+    print("Name is valid.")
+
