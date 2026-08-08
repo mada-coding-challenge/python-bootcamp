@@ -116,8 +116,6 @@ This section contains the practical labs completed throughout the bootcamp.
   <img src="screenshots/django.png" width="850" alt="Django Application Screenshot">
 </p>
 
-> 📌 Replace the image paths above with screenshots from your actual projects.
-
 ---
 
 ## 📂 Repository Structure
