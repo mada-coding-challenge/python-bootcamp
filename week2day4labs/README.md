@@ -306,7 +306,7 @@ These concepts are fundamental to building real applications because web applica
 The screenshot below shows the terminal output from the **Week 2 — Day 4** labs.
 
 <p align="center">
-  <img src="image.png" width="850" alt="Week 2 Day 4 Python Labs Output">
+  <img src="image-1.png" width="850" alt="Week 2 Day 4 Python Labs Output">
 </p>
 
 ---
