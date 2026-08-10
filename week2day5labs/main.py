@@ -1,4 +1,3 @@
-
 # ============================================================
 # 🐍 WEEK 2 — DAY 5
 # Python Loops & Repetition
@@ -192,6 +191,84 @@ print("🔐 Enter Your Password")
 
 while password != "":
     password = input("🔑 Enter Your Password: ")
+
+
+# ============================================================
+# 🧪 LAB 13 — Password Validation
+# ============================================================
+
+print("\n" + "=" * 60)
+print("🧪 LAB 13 — PASSWORD VALIDATION")
+print("=" * 60)
+
+password = ""
+
+password = input("🔐 Please enter password: ")
+
+while password != "python123":
+    password = input("❌ Incorrect password, try again: ")
+
+print("✅ Access granted")
+
+
+# ============================================================
+# 🧪 LAB 14 — pass Statement
+# ============================================================
+
+print("\n" + "=" * 60)
+print("🧪 LAB 14 — PASS STATEMENT")
+print("=" * 60)
+
+for score in [80, 55, 4, 90]:
+    if score < 50:
+        pass
+
+    print(f"📊 Score processed: {score}")
+
+
+# ============================================================
+# 🧪 LAB 15 — continue Statement
+# ============================================================
+
+print("\n" + "=" * 60)
+print("🧪 LAB 15 — CONTINUE STATEMENT")
+print("=" * 60)
+
+for record in [80, 55, 45, 90]:
+    if record < 50:
+        print(f"⏭️ Skipping: {record}")
+        continue
+
+    print(f"✅ Processing: {record}")
+
+
+# ============================================================
+# 🧪 LAB 16 — break Statement
+# ============================================================
+
+print("\n" + "=" * 60)
+print("🧪 LAB 16 — BREAK STATEMENT")
+print("=" * 60)
+
+for badscore in [80, 55, 45, 90]:
+    if badscore < 50:
+        print(f"🛑 Stopping at: {badscore}")
+        break
+
+    print(f"👀 We saw: {badscore}")
+
+
+# ============================================================
+# 🧪 LAB 17 — Nested Loops
+# ============================================================
+
+print("\n" + "=" * 60)
+print("🧪 LAB 17 — NESTED LOOPS")
+print("=" * 60)
+
+for row in range(1, 4):
+    for column in range(1, 4):
+        print(f"📐 Row: {row} x {column} = {row * column}")
 
 
 # ============================================================
