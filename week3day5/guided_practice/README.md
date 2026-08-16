@@ -131,6 +131,3 @@ the original changes, but the backup stays unchanged.
 This proves that `deepcopy()` keeps nested objects separate.
 
 ```
-
-One thing to notice: **Sara's average is 56.67**, so the final report only contains **Omar**.
-```
