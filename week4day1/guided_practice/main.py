@@ -88,8 +88,8 @@ class Student:
 
 
 class Course:
-    def __init__(self, students=None):
-        self.students = students if students is not None else []
+    def __init__(self, students=[]):
+        self.students = students
 
     # --------------------------------------------------------
     # STEP 5: DISPLAY STUDENTS
