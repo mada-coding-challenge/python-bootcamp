@@ -27,6 +27,16 @@ We learned how to:
 * Use headings and paragraphs
 * Add a button to go back to the previous page
 
+## Live Pages
+
+### First Lab
+
+https://mada-coding-challenge.github.io/python-bootcamp/week5day2_labs/first_lab/
+
+### Second Lab
+
+https://mada-coding-challenge.github.io/python-bootcamp/week5day2_labs/second_lab/
+
 ## Commands Learned
 
 Start a simple local server:
