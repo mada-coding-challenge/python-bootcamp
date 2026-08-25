@@ -95,7 +95,7 @@ sqr = {
 
 print(sqr)
 
-#rsearch
+#research
 
 tuple = ([1,2],[7,6])
 tuple[0][0]=5
