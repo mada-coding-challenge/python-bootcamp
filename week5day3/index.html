@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Profile</title>
+</head>
+<body style="display: flex; justify-content: center;flex-direction: column;align-items: center;">
+    <main style="width:500px; text-align: center;">
+        <img width=300 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHRRNIlir5eE0nDpSMQQnRMsRQxp5Qm-nhN-L1g_TPTw&s" alt="" srcset="">
+        <h1>Mada</h1> 
+        <p class="note" id="main-note">trying to make it to the next day</p>
+        <h2>Goal</h2>
+        <p >getting a job and keeping it</p>
+        <h2>hobbies</h2>
+        <p >nothing just laying around and eating</p>
+        <ul style="text-align: left;">
+            <li>trying to learn python</li>
+            <li>trying to learn Django</li>
+        </ul>
+        
+        <ol style="text-align: left;">
+            <li>FrontEnd 50%</li>
+            <li>BackEnd 30%</li>
+        </ol>
+        <!-- lab1 -->
+        <form action="">
+            <label for="email">Email</label> <br>
+            <input type="email" name="email" id="email"> <br> <br>
+            <label for="color">Choose fav color</label>
+            <select name="color" id="">
+            <option value="">Red</option>
+            <option value="">Blue</option>
+            </select><br>
+            <section class="checkbox">
+            <h3>Are you interested</h3>
+            <input type="checkbox" name="yes" class="ch" id="ch"> 
+            <label for="yes">Yes</label> <br>
+            <input type="checkbox" name="no" class="ch" id=""> 
+            <label for="no">No</label> <br>
+            </section>
+            <textarea name="message" id=""></textarea><br>
+            <button >Send</button>
+        </form>
+        <button id="feedback" onclick="window.history.back()">Feedback</button>
+    </main>
+</body>
+</html>
