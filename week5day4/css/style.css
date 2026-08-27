@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+header{
+    width:100%;
+}
+
+.hero{
+    display:flex;
+    justify-content: center;
+    align-items: center; 
+    color:#FE2329;
+    width:100%;
+    height:100vh;
+}
+header {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    gap:1rem;
+    width:100%;
+    border-bottom: solid 1px #F0FFF2;
+    padding: 5px;
+    font-size: .8rem;
+    
+}
+nav{
+    display:flex;
+    justify-content: space-between;
+    width:30%;
+
+}
+nav a{
+    text-decoration: none;
+    color: #F0FFF2;
+}
+
+
+header img{
+    width: 80px;
+    object-fit: cover;
+    border: 4px solid #F8E948;
+    border-radius: 20px;
+
+    box-shadow: 0 8px 20px rgba(80, 50, 70, 0.15);
+}
+
+.hero{
+    font-family: Impact, "Arial Black", sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ff1d1d;
+
+  /* White outline */
+  -webkit-text-stroke: 4px white;
+
+  /* Shadow */
+  text-shadow:
+    4px 4px 0 rgba(0, 0, 0, 0.15);
+
+  /* Small spacing */
+  letter-spacing: 2px;
+}
+
+.aboutme{
+display: grid;
+height:100vh;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr)) 
+}
+.aboutme .card-text{
+ /* display:flex; */
+display: grid;
+height:100%;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr))
+}
+
+body{
+    font-size: 1.3rem;
+    font-family: sans-serif;
+    line-height: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1B9EE7;
+    color: #F0FFF2;
+    width:100%;
+    
+}
+/* lab2 */
+h2, p{
+    text-align: left;
+    font-weight: bold;
+    font-size: 2rem;
+    color:rgb(255, 221, 0);
+    line-height: normal;
+}
+
+main{
+    width:100%;
+    height:100%;
+    text-align: center;
+}
+
+ul{
+    text-align: left;
+}
+
+.note{
+    color:blue;
+}
+
+#main-note{
+    color:blueviolet;
+}
+
+#main-note:hover{
+
+    color:palevioletred;
+}
+/* lab3 */
+form{
+    border:  thick double #664ca8;
+}
+
+input,select, textarea{
+    width:90%;
+    padding: 12px;
+    margin: 10px 0;
+}
+
+.ch{
+    width:10%;
+    margin:0;
+    padding:0;
+    
+}
+.checkbox{
+    text-align: left;
+    padding-left: 1.8rem;
+}
+button{
+    padding: 10px 32px;
+    margin:2rem;
+    cursor:pointer;
+    
+}
+
+#feedback:hover{
+    transform: scale(1.5);
+}
+
+@media (max-width:768px){
+    .aboutme .card{
+        grid-template-columns: 1fr;
+    }
+    nav{
+        flex-direction: column;
+    }
+}
