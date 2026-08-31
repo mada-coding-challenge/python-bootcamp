@@ -5,8 +5,12 @@
 header{
     width:100%;
 }
-
+@keyframes fadeIn{
+    0%{opacity:0;transform:translateY(20px)}
+    100%{opacity: 1 ; transform:translateY(0)}
+}
 .hero{
+    animation: fadeIn 1s ease forwards;
     display:flex;
     justify-content: center;
     align-items: center; 
@@ -59,7 +63,19 @@ header img{
     box-shadow: 0 8px 20px rgba(80, 50, 70, 0.15);
 }
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
 
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin{
+    animation: spin .8s infinite linear;
+    animation-delay: 500ms;
+}
 
 .aboutme{
     display: grid;
@@ -68,6 +84,7 @@ header img{
     width: 90%;
     max-width: 1000px;
     margin: 2rem auto;
+    animation: fadeIn 1s ease forwards;
     
 }
 .card-img {
@@ -88,6 +105,7 @@ header img{
 
 .card-text{
  /* display:flex; */
+  animation: fadeIn 1s linear forwards;
 background-color: #ff7b8b;
     border-radius: 40px;
     padding: 2rem;
@@ -98,12 +116,21 @@ background-color: #ff7b8b;
     align-items: center;
     border-radius: 0 40px 40px 0;
 }
+@keyframes slideIn {
+  from {
+    transform: translateX(-20px);
+  }
 
+  to {
+    transform: translateX(0);
+  }
+}
 
 .card-text h2 {
     color: white;
     font-size: 1.5rem;
     margin: 0;
+    animation: slideIn .9s ease forwards;
 }
 
 .card-text p {
@@ -168,6 +195,7 @@ form{
     display: flex;
     justify-content: center;
     justify-items: center;
+    
 }
 input,select, textarea{
     width:90%;
@@ -181,6 +209,8 @@ input,select, textarea{
     padding:0;
     
 }
+
+
 .checkbox{
     text-align: left;
     padding-left: 1.8rem;
@@ -189,12 +219,18 @@ button{
     padding: 10px 32px;
     margin:2rem;
     cursor:pointer;
+    background-color: #664ca8;
+    color: #F0FFF2;
+    transition: transform .25s ease, background .25s ease;
     
 }
 
-#feedback:hover{
-    transform: scale(1.5);
+button:hover,button:focus{
+    transform: translateY(-4px);
+    background: #ff7b8b;
+    animation-delay: 5s;
 }
+
 
 @media (max-width:768px){
     .aboutme {
