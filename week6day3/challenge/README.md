@@ -1,6 +1,4 @@
-Absolutely. Here is a simple `README.md` for your Django Movies project, including an **MVT flow drawing**.
 
-````markdown
 # Django Movies App
 
 A simple Django application that displays a list of movies and allows the user to view details for each movie.
@@ -345,7 +343,4 @@ movies list
 movie.html
      ↓
 Movie details
-```
-
-```
 ```
