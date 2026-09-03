@@ -1,6 +1,4 @@
-Absolutely. Here is a simple `README.md` for your Django library project, including a drawing of the **MVT flow**.
 
-````markdown
 # Django Library Project
 
 A simple Django project that displays a list of books and allows users to view details for each book.
@@ -287,7 +285,3 @@ TEMPLATE
   │ HTML
   ▼
 USER
-```
-
-> In Django, the framework is commonly described as **MTV (Model–Template–View)**. It is conceptually very similar to the MVT terminology used in some other frameworks.
-
