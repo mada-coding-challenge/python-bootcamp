@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Receipt{% endblock %}
+
+{% block content %}
+
+<h1>Payment Receipt</h1>
+
+<p>Thank you for your purchase.</p>
+
+<p>Course: Python Basics</p>
+
+<p>Amount Paid: $50</p>
+
+<p>Payment Status: Successful</p>
+
+<a href="{% url 'courses:list' %}">
+    Back to Courses
+</a>
+
+{% endblock %}

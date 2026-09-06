@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}{{ category }}{% endblock %}
+
+{% block content %}
+
+<h1>{{ category }} Courses</h1>
+
+{% for course in courses %}
+
+    <h2>{{ course.title }}</h2>
+
+    <p>{{ course.description }}</p>
+
+    <a href="{% url 'courses:detail' course.slug %}">
+        View Course
+    </a>
+
+{% empty %}
+
+    <p>No courses found in this category.</p>
+
+{% endfor %}
+
+<br>
+
+<a href="{% url 'courses:list' %}">
+    Back to All Courses
+</a>
+
+{% endblock %}
