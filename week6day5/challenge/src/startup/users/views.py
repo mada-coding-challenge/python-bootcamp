@@ -11,4 +11,6 @@ class LoginView(View):
 class ProfileView(View):
 
     def get(self, request):
+        print("ProfileView" , request.method)
         return render(request, "users/profile.html")
+    

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<h1>Welcome to Courses</h1>
+
+<p>
+    Welcome to our courses website.
+</p>
+
+<p>
+    Learn programming and web development with our courses.
+</p>
+
+<a href="{% url 'courses:list' %}">
+    View Courses
+</a>
+
+{% endblock %}
