@@ -297,6 +297,16 @@ RegisterView.as_view()
 
 which converts the class into a Django view callable.
 
+## Screenshots
+
+![home page](image.png)
+
+![login page](image-1.png)
+
+![Register](image-2.png)
+
+![Profile](image-3.png)
+
 ## Important Note
 
 This project is designed for **learning Django sessions and CBVs**.
