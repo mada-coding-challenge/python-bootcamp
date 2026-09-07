@@ -1,0 +1,19 @@
+
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<h1>Home</h1>
+
+<p>Welcome to the Accounts application.</p>
+
+<a href="{% url 'register' %}">Create an account</a>
+
+<br>
+
+<a href="{% url 'login' %}">Login</a>
+
+{% endblock %}
+
