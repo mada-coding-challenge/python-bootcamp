@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}
+{{ name|title }} | CourseHub
+{% endblock %}
+
+{% block content %}
+
+<section class="detail-section">
+    <div class="container">
+
+        <a href="{% url 'coursesApp:courses' %}" class="back-link">
+            ← Back to Courses
+        </a>
+
+        <div class="detail-card">
+
+            <img
+                src="{% static 'images/' %}{{ image }}"
+                alt="{{ name }}"
+                class="detail-image"
+            >
+
+            <div class="detail-content">
+
+                <h1>
+                    {{ name|title }}
+                </h1>
+
+                {% if level == "Beginner" %}
+                    <span class="course-level">
+                        Beginner
+                    </span>
+                {% else %}
+                    <span class="course-level">
+                        {{ level|title }}
+                    </span>
+                {% endif %}
+
+                <p>
+                    Students: {{ student_count }}
+                </p>
+
+                <p class="detail-description">
+                    {{ description|safe }}
+                </p>
+
+                <p>
+                    Short description:
+                    {{ description|striptags|truncatewords:8 }}
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

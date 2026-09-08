@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}
+Courses | CourseHub
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <div class="container">
+
+        <h1>Our Courses</h1>
+
+        <p>
+            Explore our courses and start learning today.
+        </p>
+
+    </div>
+</section>
+
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="courses-grid">
+
+            {% for course in courses %}
+
+                {% include "course_card.html" %}
+
+            {% empty %}
+
+                <p>No courses available.</p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,525 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #4f46e5;
+}
+
+.logo span {
+    color: #0f172a;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #475569;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #4f46e5;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+        135deg,
+        #eef2ff,
+        #f8fafc
+    );
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.section-label {
+    display: inline-block;
+    color: #4f46e5;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 25px;
+    color: #0f172a;
+}
+
+.hero h1 span {
+    display: block;
+    color: #4f46e5;
+}
+
+.hero-text > p {
+    max-width: 600px;
+    font-size: 1.1rem;
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #4f46e5;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #4338ca;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: white;
+    color: #4f46e5;
+    border: 1px solid #c7d2fe;
+}
+
+.btn-secondary:hover {
+    background: #eef2ff;
+}
+
+
+/* =========================
+   HERO CARD
+========================= */
+
+.hero-card {
+    background: white;
+    padding: 50px 35px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+.hero-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eef2ff;
+    border-radius: 50%;
+    font-size: 3rem;
+}
+
+.hero-card h2 {
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+.hero-card p {
+    color: #64748b;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    padding: 100px 0;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 50px;
+}
+
+.section-heading h2 {
+    font-size: 2.5rem;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.section-heading p {
+    color: #64748b;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.feature-card {
+    background: white;
+    padding: 35px 30px;
+    border-radius: 18px;
+    border: 1px solid #e2e8f0;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+}
+
+.feature-icon {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+.feature-card p {
+    color: #64748b;
+}
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.page-header {
+    padding: 80px 0;
+    text-align: center;
+    background: #eef2ff;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #64748b;
+}
+
+
+/* =========================
+   COURSES
+========================= */
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.course-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    transition: 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.1);
+}
+
+.course-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.course-content {
+    padding: 25px;
+}
+
+.course-content h2 {
+    color: #0f172a;
+    margin: 10px 0;
+}
+
+.course-content p {
+    color: #64748b;
+    margin-bottom: 12px;
+}
+
+.course-level {
+    display: inline-block;
+    background: #eef2ff;
+    color: #4f46e5;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.course-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #4f46e5;
+    font-weight: 700;
+}
+
+.course-link:hover {
+    color: #3730a3;
+}
+
+
+/* =========================
+   COURSE DETAIL
+========================= */
+
+.detail-section {
+    padding: 80px 0;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #4f46e5;
+    font-weight: 700;
+}
+
+.detail-card {
+    background: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.08);
+}
+
+.detail-image {
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    object-fit: cover;
+}
+
+.detail-content {
+    padding: 50px;
+}
+
+.detail-content h1 {
+    font-size: 2.8rem;
+    color: #0f172a;
+    margin: 15px 0;
+}
+
+.detail-description {
+    color: #64748b;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.course-info {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 30px;
+}
+
+.course-info div {
+    display: flex;
+    flex-direction: column;
+}
+
+.course-info span {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.course-info strong {
+    color: #0f172a;
+    font-size: 1.2rem;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    background: #0f172a;
+    color: white;
+    padding: 50px 0;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer h3 {
+    color: #818cf8;
+    margin-bottom: 5px;
+}
+
+.footer p {
+    color: #94a3b8;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        padding: 80px 0;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .detail-card {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-image {
+        min-height: 300px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 0;
+    }
+
+    .nav-links {
+        gap: 15px;
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .detail-content {
+        padding: 30px;
+    }
+
+    .detail-content h1 {
+        font-size: 2rem;
+    }
+
+    .course-info {
+        gap: 25px;
+    }
+}

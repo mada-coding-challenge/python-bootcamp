@@ -1,0 +1,40 @@
+<article class="course-card">
+
+    <img
+        src="/static/images/{{ course.image }}"
+        alt="{{ course.name }}"
+        class="course-image"
+    >
+
+    <div class="course-content">
+
+        <h2>{{ course.name|title }}</h2>
+
+        <p>
+            Level: {{ course.level|title }}
+        </p>
+
+        <p>
+            {{ course.description|truncatewords:10 }}
+        </p>
+
+        {% if course.student_count == 0 %}
+            <p>
+                No students enrolled yet.
+            </p>
+        {% else %}
+            <p>
+                {{ course.student_count }} students enrolled.
+            </p>
+        {% endif %}
+
+        <a
+            href="{% url 'coursesApp:course_detail' course.name %}"
+            class="course-link"
+        >
+            View Course →
+        </a>
+
+    </div>
+
+</article>
