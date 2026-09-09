@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{{ course.name }}</title>
+</head>
+<body>
+
+    <h1>{{ course.name }}</h1>
+
+    <!-- Course information -->
+    <p>
+        <strong>Category:</strong>
+        {{ course.category }}
+    </p>
+
+    <p>
+        <strong>Difficulty:</strong>
+        {{ course.difficulty }}
+    </p>
+
+
+    <!-- Detail tabs -->
+    <nav>
+
+        <a href="{% url 'courses:course_detail' course.id %}?tab=details">
+            Details
+        </a>
+
+        |
+
+        <a href="{% url 'courses:course_detail' course.id %}?tab=syllabus">
+            Syllabus
+        </a>
+
+        |
+
+        <a href="{% url 'courses:course_detail' course.id %}?tab=instructor">
+            Instructor
+        </a>
+
+    </nav>
+
+    <hr>
+
+
+    <!-- Details tab -->
+    {% if tab == "details" %}
+
+        <h2>Course Details</h2>
+
+        <p>
+            {{ course.description }}
+        </p>
+
+        <p>
+            Category: {{ course.category }}
+        </p>
+
+        <p>
+            Difficulty: {{ course.difficulty }}
+        </p>
+
+
+    <!-- Syllabus tab -->
+    {% elif tab == "syllabus" %}
+
+        <h2>Syllabus</h2>
+
+        <ul>
+            <li>Introduction</li>
+            <li>Basic concepts</li>
+            <li>Practical exercises</li>
+            <li>Advanced topics</li>
+            <li>Final project</li>
+        </ul>
+
+
+    <!-- Instructor tab -->
+    {% elif tab == "instructor" %}
+
+        <h2>Instructor</h2>
+
+        <p>
+            Instructor: John Doe
+        </p>
+
+        <p>
+            Experienced instructor in web development.
+        </p>
+
+    {% endif %}
+
+
+    <hr>
+
+    <a href="{% url 'courses:course_list' %}">
+        ← Back to Courses
+    </a>
+
+</body>
+</html>
