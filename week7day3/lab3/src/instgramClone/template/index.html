@@ -1,0 +1,195 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MiniGram</title>
+
+    <link rel="stylesheet" href="{% static 'css/feed.css' %}">
+</head>
+
+<body>
+
+
+    <nav class="navbar">
+        <div class="nav-inner">
+
+            <a href="{% url 'instagram:feed' %}" class="logo">
+                MiniGram
+            </a>
+
+            <div class="nav-icons">
+                <span>♡</span>
+                <span>＋</span>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <main class="container">
+
+
+
+        <section class="stories">
+
+            <div class="story">
+                <div class="story-avatar">Y</div>
+                <span>You</span>
+            </div>
+
+            <div class="story">
+                <div class="story-avatar">S</div>
+                <span>Sarah</span>
+            </div>
+
+            <div class="story">
+                <div class="story-avatar">A</div>
+                <span>Ahmed</span>
+            </div>
+
+            <div class="story">
+                <div class="story-avatar">M</div>
+                <span>Maya</span>
+            </div>
+
+            <div class="story">
+                <div class="story-avatar">L</div>
+                <span>Lina</span>
+            </div>
+
+        </section>
+
+
+
+        <section class="create-post">
+
+            <h2>Create a post</h2>
+
+            <form method="POST" enctype="multipart/form-data">
+
+                {% csrf_token %}
+
+                <textarea
+                    name="description"
+                    placeholder="What's on your mind?"
+                    required
+                ></textarea>
+
+                <div class="upload-row">
+
+                    <label class="file-label">
+                        📷 Choose image
+
+                        <input
+                            type="file"
+                            name="image"
+                            accept=".jpg,.jpeg,.png"
+                            required
+                        >
+                    </label>
+
+                    <button type="submit">
+                        Post
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <section class="feed">
+
+            {% for post in posts %}
+
+            <article class="post">
+
+
+                <div class="post-header">
+
+                    <div class="user-avatar">
+                        {{ post.username|first|upper }}
+                    </div>
+
+                    <strong>
+                        {{ post.username }}
+                    </strong>
+
+                    <span class="more">•••</span>
+
+                </div>
+
+
+
+                <img
+                    src="{{ post.image.url }}"
+                    alt="Post by {{ post.username }}"
+                    class="post-image"
+                >
+
+
+
+                <div class="post-content">
+
+                    <div class="actions">
+
+                        <form
+                            method="POST"
+                            action="{% url 'instagram:like' post.id %}"
+                        >
+
+                            {% csrf_token %}
+
+                            <button class="like-button" type="submit">
+                                ♡
+                            </button>
+
+                        </form>
+
+                            {% if post.likes == 0 %}
+                                <span class="likes">
+                                    Be the first to like this
+                                </span>
+                            {% else %}
+                                <span class="likes">
+                                    {{ post.likes }} likes
+                                </span>
+                            {% endif %}
+
+                    </div>
+
+
+
+                    <p class="description">
+                        <strong>{{ post.username }}</strong>
+                        {{ post.description }}
+                    </p>
+
+                </div>
+
+            </article>
+
+            {% empty %}
+
+            <div class="empty">
+                <h2>No posts yet</h2>
+                <p>Be the first person to share something.</p>
+            </div>
+
+            {% endfor %}
+
+        </section>
+
+    </main>
+
+
+
+
+
+</body>
+</html>
