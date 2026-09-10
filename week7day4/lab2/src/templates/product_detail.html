@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+
+<div class="product-detail">
+
+    <h1>{{ product.name }}</h1>
+
+    <p>
+        <strong>Category:</strong>
+        {{ product.category }}
+    </p>
+
+    <p>
+        <strong>Price:</strong>
+        ${{ product.price }}
+    </p>
+
+    <p>
+        <strong>Rating:</strong>
+        {{ product.rating }}
+    </p>
+
+
+    <!-- Tabs -->
+
+    <div class="tabs">
+
+        <a href="?tab=details"
+           {% if tab == "details" %}class="active"{% endif %}>
+            Details
+        </a>
+
+        <a href="?tab=reviews"
+           {% if tab == "reviews" %}class="active"{% endif %}>
+            Reviews
+        </a>
+
+        <a href="?tab=shipping"
+           {% if tab == "shipping" %}class="active"{% endif %}>
+            Shipping
+        </a>
+
+    </div>
+
+
+    <!-- Tab Content -->
+
+    <div class="tab-content">
+
+        {% if tab == "details" %}
+
+            <h2>Details</h2>
+
+            <p>
+                {{ product.description }}
+            </p>
+
+        {% elif tab == "reviews" %}
+
+            <h2>Reviews</h2>
+
+            <p>
+                This product has a rating of
+                {{ product.rating }} / 5.
+            </p>
+
+            <p>
+                Customer reviews will appear here.
+            </p>
+
+        {% elif tab == "shipping" %}
+
+            <h2>Shipping</h2>
+
+            <p>
+                This product is available for shipping.
+            </p>
+
+            <p>
+                Estimated delivery: 3-5 business days.
+            </p>
+
+        {% endif %}
+
+    </div>
+
+
+    <a
+        href="{% url 'products:product_list' %}"
+        class="button"
+    >
+        Back to Products
+    </a>
+
+</div>
+
+{% endblock %}

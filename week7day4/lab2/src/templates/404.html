@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Page Not Found (404){% endblock %}
+
+{% block content %}
+<div class="error-page">
+  <div class="error-badge">Error 404</div>
+  
+  <div class="error-graphic">
+    <!-- Clean modern SVG icon -->
+    <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <path d="m15 9-6 6"></path>
+      <path d="m9 9 6 6"></path>
+    </svg>
+  </div>
+
+  <h1>Oops! Page not found</h1>
+  <p class="error-message">
+    The page or product you're looking for doesn't exist, was moved, or is temporarily unavailable.
+  </p>
+
+  <div class="error-actions">
+    <a href="{% url 'products:product_list' %}" class="btn-primary">
+      Browse Products
+    </a>
+    <a href="javascript:history.back()" class="btn-secondary">
+      &larr; Go Back
+    </a>
+  </div>
+</div>
+{% endblock %}
