@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<h1>Feedback Form</h1>
+
+<form method="POST" novalidate>
+    {% csrf_token %}
+
+    <div class="{% if form.name.errors %}error{% endif %}">
+        {{ form.name.label_tag }}
+        {{ form.name }}
+
+        {% for error in form.name.errors %}
+            <p class="error-message">{{ error }}</p>
+        {% endfor %}
+    </div>
+
+
+    <div class="{% if form.email.errors %}error{% endif %}">
+        {{ form.email.label_tag }}
+        {{ form.email }}
+
+        {% for error in form.email.errors %}
+            <p class="error-message">{{ error }}</p>
+        {% endfor %}
+    </div>
+
+
+    <div class="{% if form.message.errors %}error{% endif %}">
+        {{ form.message.label_tag }}
+        {{ form.message }}
+
+        {% for error in form.message.errors %}
+            <p class="error-message">{{ error }}</p>
+        {% endfor %}
+    </div>
+
+
+    <div class="{% if form.rating.errors %}error{% endif %}">
+        {{ form.rating.label_tag }}
+        {{ form.rating }}
+
+        {% for error in form.rating.errors %}
+            <p class="error-message">{{ error }}</p>
+        {% endfor %}
+    </div>
+
+
+    <button type="submit">Submit Feedback</button>
+
+</form>
+
+</body>
+</html>

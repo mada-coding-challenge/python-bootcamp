@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="thank-you-page">
+    <main class="thank-you-card">
+        <div class="success-icon" aria-hidden="true">✓</div>
+
+        <h1>Thank You!</h1>
+
+        <p>
+            Your feedback has been submitted successfully.
+            We appreciate you taking the time to share your thoughts.
+        </p>
+
+        <a class="feedback-link" href="{% url 'feedback' %}">
+            Submit another feedback
+        </a>
+    </main>
+</body>
+</html>
