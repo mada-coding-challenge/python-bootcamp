@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiniStore</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="{{ theme|default:'light' }}">
+
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-icon">🛍️</span>
+        <h1>MiniStore</h1>
+      </div>
+
+      <!-- Theme Switcher -->
+      <div class="theme-switcher">
+        <span class="theme-label">Theme:</span>
+        <div class="theme-buttons">
+          <a href="{% url 'set_theme' 'light' %}" class="btn-theme {% if theme == 'light' %}active{% endif %}">
+            ☀️ Light
+          </a>
+          <a href="{% url 'set_theme' 'dark' %}" class="btn-theme {% if theme == 'dark' %}active{% endif %}">
+            🌙 Dark
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="store-container">
+
+    <!-- Products Catalog -->
+    <section class="section catalog-section">
+      <div class="section-header">
+        <h2>Available Products</h2>
+        <span class="section-subtitle">Pick an item to add to your order</span>
+      </div>
+
+      <div class="products-grid">
+        <!-- Product 1 Card -->
+        <article class="product-card">
+          <div class="product-thumb">📦</div>
+          <div class="product-info">
+            <h3>Product 1</h3>
+            <p class="product-meta">Standard package item</p>
+          </div>
+          <a href="{% url 'add_product' 1 %}" class="btn btn-primary">
+            + Add to Cart
+          </a>
+        </article>
+
+        <!-- Product 2 Card -->
+        <article class="product-card">
+          <div class="product-thumb">✨</div>
+          <div class="product-info">
+            <h3>Product 2</h3>
+            <p class="product-meta">Premium package item</p>
+          </div>
+          <a href="{% url 'add_product' 2 %}" class="btn btn-primary">
+            + Add to Cart
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Shopping Cart Panel -->
+    <aside class="section cart-section">
+      <div class="cart-header">
+        <div class="cart-title">
+          <h2>Your Cart</h2>
+          <span class="cart-count">{{ cart|length|default:"0" }} items</span>
+        </div>
+        {% if cart %}
+          <a href="{% url 'clear_cart' %}" class="btn-clear" title="Remove all items">
+            Clear all
+          </a>
+        {% endif %}
+      </div>
+
+      {% if cart %}
+        <ul class="cart-list">
+          {% for product in cart %}
+            <li class="cart-item">
+              <span class="item-icon">✓</span>
+              <span class="item-name">Product {{ product }}</span>
+              <span class="item-tag">In cart</span>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <div class="empty-cart">
+          <span class="empty-icon">🛒</span>
+          <p class="empty-title">Your cart is empty</p>
+          <p class="empty-sub">Choose a product on the left to get started.</p>
+        </div>
+      {% endif %}
+    </aside>
+
+  </main>
+
+</body>
+</html>
