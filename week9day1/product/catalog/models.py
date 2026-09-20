@@ -4,9 +4,9 @@ from django.db import models
 class Product(models.Model):
 
     class Category(models.TextChoices):
-        ELECTRONICS = "EL", "Electronics"
-        CLOTHING = "CL", "Clothing"
-        FOOD = "FD", "Food"
+        ELECTRONICS = "Electronics", "Electronics"
+        CLOTHING = "Clothing", "Clothing"
+        FOOD = "Food", "Food"
 
     sku = models.CharField(
         max_length=50,
@@ -22,7 +22,7 @@ class Product(models.Model):
     )
 
     category = models.CharField(
-        max_length=2,
+        max_length=20,
         choices=Category.choices,
         default=Category.ELECTRONICS
     )
@@ -49,4 +49,4 @@ class Product(models.Model):
     )
 
     def __str__(self):
-        return self.name
+        return f"{self.name}({self.sku})"
