@@ -1,6 +1,5 @@
 from django.db import models
-
-
+from django.db.models import Q
 class Product(models.Model):
 
     class Category(models.TextChoices):
@@ -50,3 +49,34 @@ class Product(models.Model):
 
     def __str__(self):
         return f"{self.name}({self.sku})"
+    
+    def is_available(self):
+            return self.is_active and self.stock > 0
+
+    def inventory_value(self):
+        return self.price * self.stock
+
+    class Meta:
+
+        ordering = ["category", "name"]
+
+        verbose_name = "Product"
+        verbose_name_plural = "Products"
+
+        indexes = [
+            models.Index(
+                fields=["category", "is_active"]
+            ),
+        ]
+
+        constraints = [
+            models.CheckConstraint(
+                condition=Q(price__gte=0),
+                name="product_price_non_negative"
+            ),
+
+            models.CheckConstraint(
+                condition=Q(stock__gte=0),
+                name="product_stock_non_negative"
+            ),
+        ]
